@@ -32,6 +32,7 @@ class Board(object):
         self.squares = np.random.choice(self.squares_options,25,replace=False).reshape(5,5)
         self.board = pd.DataFrame(self.squares)
         self.board.columns = ['S','A','G','E','R']
+        self.board['G'][2] = "Good Afternoon Business Analysts!"
         sf_l = [sf2,sf3,sf4,sf5,sf6]
         self.sound(np.random.choice(sf_l))
         return self.board

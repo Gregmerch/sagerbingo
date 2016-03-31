@@ -8,6 +8,14 @@ sf3 = 'files/ld_sd_shuffled2.mp3'
 sf4 = 'files/ld_sd_shuffled3.mp3'
 sf5 = 'files/ld_sd_shuffled4.mp3'
 sf6 = 'files/ld_sd_shuffled5.mp3'
+sf_l = [sf2,sf3,sf4,sf5,sf6]
+
+def setup():
+    return Audio(url='../sagerbingo/'+sf,autoplay=True)
+
+def shuffle():
+    return Audio(url='../sagerbingo/'+np.random.choice(sf_l),autoplay=True)
+
 
 class Board(object):
     """
@@ -33,8 +41,6 @@ class Board(object):
         self.board = pd.DataFrame(self.squares)
         self.board.columns = ['S','A','G','E','R']
         self.board['G'][2] = "Good Afternoon Business Analysts!"
-        sf_l = [sf2,sf3,sf4,sf5,sf6]
-        self.sound(np.random.choice(sf_l))
         return self.board
 
 

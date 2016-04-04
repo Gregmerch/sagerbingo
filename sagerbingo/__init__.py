@@ -1,6 +1,8 @@
 import pandas as pd
 import numpy as np
+import time
 from IPython.display import Audio
+from IPython.display import Image
 
 sf = 'files/ld_sd_compiled.mp3'
 sf2 = 'files/ld_sd_shuffled1.mp3'
@@ -14,8 +16,11 @@ def setup():
     return Audio(url='../sagerbingo/'+sf,autoplay=True)
 
 def shuffle():
+    time.sleep(1.25)
     return Audio(url='../sagerbingo/'+np.random.choice(sf_l),autoplay=True)
 
+def final():
+    return Image(url='../sagerbingo/files/fry.jpg')
 
 class Board(object):
     """
